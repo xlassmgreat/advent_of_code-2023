@@ -30,7 +30,7 @@ fn p1(dat: &Vec<String>) {
         .zip(distance)
         .map(|(t, d)| {
             let ubound = (t + (t.powi(2) - 4.0 * d).sqrt()) / 2.0;
-            let (ubound, lbound) = ((ubound - 0.000001).floor(), (t - ubound + 0.000001).ceil());
+            let (ubound, lbound) = ((ubound - f64::EPSILON).floor(), (t - ubound + f64::EPSILON).ceil());
             (ubound.floor() - lbound.ceil() + 1.0).floor() as u64
         })
         .fold(1, |acc, x| acc * x);
@@ -53,8 +53,8 @@ fn p2(dat: &Vec<String>) {
 
     let ubound = (time + (time.powi(2) - 4.0 * distance).sqrt()) / 2.0;
     let (ubound, lbound) = (
-        (ubound - 0.000001).floor(),
-        (time - ubound + 0.000001).ceil(),
+        (ubound - f64::EPSILON).floor(),
+        (time - ubound + f64::EPSILON).ceil(),
     );
     let ways = (ubound.floor() - lbound.ceil() + 1.0).floor() as u64;
 
