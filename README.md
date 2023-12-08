@@ -1,5 +1,5 @@
 # advent_of_code-2023
-My solutions to Advent of Code 2023 in Rust. All solutions are in the bin folder. All binaries take theri input from stdin.
+My solutions to Advent of Code 2023 in Rust. All solutions are in the bin folder. All binaries take their input from stdin.
 
 A demo run might look like this:
 
